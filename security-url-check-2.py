@@ -5,9 +5,12 @@ import sys
 def checkURL(companyurl):
    
     companyurl = "http://" + companyurl;
-    r = requests.get(companyurl)
-    print companyurl, ",", r.status_code
-
+    
+    try:
+        r = requests.get(companyurl)
+        print companyurl, ",", r.status_code
+    except:
+        print companyurl, ",", "error"
 
 args = str(sys.argv)
 myFile = sys.argv.pop();
