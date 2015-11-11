@@ -33,22 +33,20 @@ for footnote in fns:
  
         cleaner = re.sub(r"<.*?>", "", footnote_with_tags)
         no_newlines = re.sub(r"\n", "", cleaner)
-        compact_spaces = re.sub(r"\s{2,}", " ", no_newlines)
-        print "??",  compact_spaces
-
-        #print text
-        if not compact_spaces.find("NOTEREF") == -1:
+        footnote_workable_text = re.sub(r"\s{2,}", " ", no_newlines)
+        
+        if not footnote_workable_text.find("NOTEREF") == -1:
             #print "Found NOTEREF in the string."
-            match= pattern.finditer(compact_spaces)
+            match= pattern.finditer(footnote_workable_text)
             for m in match:
                 #print "found a match" 
                 noteLink = m.group(1)
                 #print "notelink: ", noteLink
-                swap = re.sub(r'supranote.*?MERGEFORMAT(\d+)', r'supra note \1', compact_spaces)
+                swap = re.sub(r'supranote.*?MERGEFORMAT(\d+)', r'supra note \1', footnote_workable_text)
                 #print "swap: ", swap
                 myFNs[id] = swap
         else:
-            myFNs[id] = compact_spaces  
+            myFNs[id] = footnote_workable_text  
             
 gistcontent = "#Footnotes in file\n"           
    
@@ -87,7 +85,15 @@ print(gist.html_url)
 # <w:i/> --> italics
 # <w:smallCaps/> --> small caps
 
+ #US CODE CITES
+ # https://uslaw.link/#text=17%20USC%20105 / https://github.com/18F/linkify-citations
+ # SCOTUS
+ # https://www.law.cornell.edu/supremecourt/text/548/557
+ 
+             
 
+# <w:i/> --> italics
+# <w:smallCaps/> --> small caps
 
 #f = "footnotes.xml"
 #soup=BeautifulSoup(open(f).read())
