@@ -47,7 +47,44 @@ for footnote in fns:
                 myFNs[id] = swap
         else:
             myFNs[id] = footnote_workable_text  
-            
+
+
+ #US CODE CITES
+ # https://uslaw.link/#text=17%20USC%20105 / https://github.com/18F/linkify-citations
+uscpattern = re.compile(r'(\d+)\s+U\.?S\.?C\.?A?\s+.*?(\d+)')
+for id, fnstring in myFNs.items():
+   
+    uscmatch =   uscpattern.finditer(fnstring)  
+    for codem in uscmatch:
+        matchedCodeTitle = codem.group(1)
+        matchedCodeSection = codem.group(2)
+       
+        replaceregex = r"[\1](http://uslaw.link/#q=" + re.escape(matchedCodeTitle) + r"+USC+" + re.escape(matchedCodeSection) + r")"
+        swapcode = re.sub(r'(\d+\s+U\.?S\.?C\.?A?\s+.*?\d+\S+)', replaceregex, fnstring)
+        
+        myFNs[id] = swapcode
+
+
+
+
+
+
+ #US SCOTUS CASES
+ 
+scotuspattern = re.compile(r'(\d+)\s+U.S.\s+(\d+)')
+for id, fnstring in myFNs.items():
+   
+    scotusmatch =   scotuspattern.finditer(fnstring)  
+    for scotusm in scotusmatch:
+        matchedVolume = scotusm.group(1)
+        matchedPage = scotusm.group(2)
+        
+        replace_scotus_regex = r"[\1](https://supreme.justia.com/cases/federal/us/" + re.escape(matchedVolume) + r"/" + re.escape(matchedPage) + r")"
+        swap_scotus = re.sub(r'(\d+\s+U.S.\s+\d+)', replace_scotus_regex, fnstring)
+        
+        myFNs[id] = swap_scotus 
+
+        
 gistcontent = "#Footnotes in file\n"           
    
 for id, notestring in myFNs.items():
@@ -72,25 +109,8 @@ files = {
 gist = gh.create_gist('footnotes file from a word doc', files, public=True)
 # gist == <Gist [gist-id]>
 print(gist.html_url)
+  
 
-
-#create gists
-#https://developer.github.com/v3/gists/#create-a-gist
-         
-        
-#create gists
-#https://developer.github.com/v3/gists/#create-a-gist
-             
-
-# <w:i/> --> italics
-# <w:smallCaps/> --> small caps
-
- #US CODE CITES
- # https://uslaw.link/#text=17%20USC%20105 / https://github.com/18F/linkify-citations
- # SCOTUS
- # https://www.law.cornell.edu/supremecourt/text/548/557
- 
-             
 
 # <w:i/> --> italics
 # <w:smallCaps/> --> small caps
