@@ -2,7 +2,7 @@ from BeautifulSoup import BeautifulSoup
 import sys
 import json
 import re
-
+from github3 import login
 #from DC Legal Hackers Communciations Hackathon
 # based on https://github.com/adelevie/open-internet-order-footnotes
 # 
@@ -23,45 +23,62 @@ soup=BeautifulSoup(open(fnFile).read())
 myFNs = {}
 pattern = re.compile(r'supranoteNOTEREF.*?MERGEFORMAT(\d+),')
 
-
-
-#print soup.findAll('w:footnote')
 fns= soup.findAll('w:footnote')
 
 for footnote in fns:
     id =  int(footnote["w:id"])
     if (id > 0):
         
-        #print "Footnote ", id
-        #id = footnote.findAll(attrs={"name" : "id"})
-        #myID = footnote.findAll('id')
-        text = footnote.text
-        
+        footnote_with_tags = footnote.prettify()
+ 
+        cleaner = re.sub(r"<.*?>", "", footnote_with_tags)
+        no_newlines = re.sub(r"\n", "", cleaner)
+        compact_spaces = re.sub(r"\s{2,}", " ", no_newlines)
+        print "??",  compact_spaces
 
         #print text
-        if not text.find("NOTEREF") == -1:
+        if not compact_spaces.find("NOTEREF") == -1:
             #print "Found NOTEREF in the string."
-            match= pattern.finditer(text)
+            match= pattern.finditer(compact_spaces)
             for m in match:
                 #print "found a match" 
                 noteLink = m.group(1)
                 #print "notelink: ", noteLink
-                swap = re.sub(r'supranote.*?MERGEFORMAT(\d+)', r'supra note \1', text)
+                swap = re.sub(r'supranote.*?MERGEFORMAT(\d+)', r'supra note \1', compact_spaces)
                 #print "swap: ", swap
                 myFNs[id] = swap
         else:
-            myFNs[id] = text  
+            myFNs[id] = compact_spaces  
             
-#print "my footnotes"            
-    #print id, notestring     
-with open("tmp.txt", "w+") as outputfile:
-    for id, notestring in myFNs.items():
-         id = str(id)
-         notestring = notestring.encode("ascii", errors="ignore")
+gistcontent = "#Footnotes in file\n"           
+   
+for id, notestring in myFNs.items():
         
-         footnote =  "{0}, {1}\n".format(id, notestring)
-         footnote_writeable = footnote
-         outputfile.write(footnote_writeable)
+         id = str(id)
+         
+         gistcontent += id
+         gistcontent += ". "
+         gistcontent += notestring 
+         gistcontent += "\n"  
+         
+print gistcontent   
+gh = login("wendyck", "")
+
+files = {
+    "fn.md" : {
+        'content': gistcontent
+        }
+    }
+
+
+gist = gh.create_gist('footnotes file from a word doc', files, public=True)
+# gist == <Gist [gist-id]>
+print(gist.html_url)
+
+
+#create gists
+#https://developer.github.com/v3/gists/#create-a-gist
+         
         
 #create gists
 #https://developer.github.com/v3/gists/#create-a-gist
