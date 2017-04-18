@@ -1,34 +1,39 @@
 #! /usr/bin/env python
 
-def calculator():
+def calculator_input():
     print "Welcome to calculator. Enter your calculation separated by spaces:";
     mystr = raw_input();
-
     if " " in mystr:
         parts = mystr.split(" ");
-
         operand = parts[1];
+        return (int(parts[0]), int(parts[2]), operand);
+    else:
+        print "i didn't understand that. i'll add 5 + 8"
+        return(5,8, "+");
+
+def calculator(a,b,operand):
 
         if "+" in operand:
-            result = int(parts[0]) + int(parts[2]);
+            result = a + b;
         elif "-" in operand:
-            result = int(parts[0]) - int(parts[2]);
+            result = a - b;
         elif "*" in operand:
-            result = int(parts[0]) * int(parts[2]);
+            result = a * b;
         elif "/" in operand:
-            result = int(parts[0]) / int(parts[2]);
+            result = a / b;
         elif "%" in operand:
-            result = int(parts[0]) % int(parts[2]);
+            result = a % b;
         else:
             result = "i'm sorry, i don't understand";
         return result;
+
 
 def secret(secret_word):
     print "Welcome to the secret guessing game."
     print "Enter a word and I will tell you if it matches my secret."
     mystr = raw_input();
 
-    if secret == secret_word:
+    if mystr == secret_word:
         return "you guessed the secret word!"
     else:
         return "sorry try again"
@@ -39,7 +44,10 @@ def adventure():
 
     print "This is a story about %s. One morning, %s went for a walk. Along the way, %s met a gruffalo. The gruffalo ate %s. The end." % (name, name, name, name)
 
-result = calculator();
+
+
+(a,b,operand) = calculator_input();
+result = calculator(a,b,operand);
 print result;
 
 guess = secret("sneakers");
