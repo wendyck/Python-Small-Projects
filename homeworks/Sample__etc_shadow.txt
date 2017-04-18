@@ -1,0 +1,5 @@
+root:$1$TDQFedzX$.kv51AjM.FInu0lrH1dY30:15045:0:99999:7:::
+steve:$1$TDQFedzX$.kv51AjM.FInu0lrH1dY30:15045:0:99999:7:::
+bin:*:14195:0:99999:7:::
+daemon:*:14195:0:99999:7:::
+dave:$5$6gh4dqzS2Xx$Xfddd7921DeZz145902aa:15045:0:99999:7:::
