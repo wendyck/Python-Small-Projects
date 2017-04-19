@@ -3,13 +3,16 @@
 def calculator_input():
     print "Welcome to calculator. Enter your calculation separated by spaces:";
     mystr = raw_input();
-    if " " in mystr:
-        parts = mystr.split(" ");
-        operand = parts[1];
-        return (int(parts[0]), int(parts[2]), operand);
-    else:
-        print "i didn't understand that. i'll add 5 + 8"
-        return(5,8, "+");
+    operand = ""
+    while operand == "":
+        if " " in mystr:
+            parts = mystr.split(" ");
+            operand = parts[1];
+            return (int(parts[0]), int(parts[2]), operand);
+        else:
+            print "Please enter a calculation separated by spaces like 2 + 7"
+            mystr = raw_input();
+            
 
 def calculator(a,b,operand):
 
