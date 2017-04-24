@@ -26,7 +26,7 @@ if args.file:
         source=ips[0].strip('"');
         destination=ips[1].strip('"');
         #print source, destination
-        if "10.50.2" not in source:
+        if "N.N.N" not in source:
             myurl = 'http://ipinfo.io/' + source + "/country";
 
             try:
