@@ -37,7 +37,7 @@ if args.file:
                 print "error on lookup of", source
 
         
-        if "10.50.2" not in destination:
+        if "N.N.N" not in destination:
             myurl2 = 'http://ipinfo.io/' + destination + "/country";
 
             try:
