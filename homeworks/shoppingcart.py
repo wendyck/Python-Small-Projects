@@ -40,18 +40,32 @@ class Inventory(object):
 
     def get_name(self):
         return self.item_name;
-
+    def print_purchasable(self):
+        print "Item: %s at $%d each" % (self.item_name, self.item_price)
         
         
 #inventory object that stores item names, prices, and quantities
         
 shoppingcart = ShoppingCart();
 
-iphone = Inventory("iPhone", 2.0, 10)
-name = iphone.get_name();
+iphone = Inventory("iPhone", 2.0, 0)
+android = Inventory("Samsung Galaxy", 400.0, 0)
+
+print "Would you like to buy anything?"
+print "now available:"
+iphone.print_purchasable();
+print "Purchase how many?"
+i_quantity= raw_input();
+
+iphone.set_quantity(int(i_quantity));
+
 shoppingcart.add_item(iphone);
 
-android = Inventory("Samsung Galaxy", 400.0, 1)
+android.print_purchasable();
+print "Purchase how many?"
+a_quantity= raw_input();
+
+android.set_quantity(int(a_quantity));
 
 shoppingcart.add_item(android);
 
