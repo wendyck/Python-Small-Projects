@@ -1,0 +1,26 @@
+ <div class=“span-6">
+        <a href=“https://fetlife.com/users/7427765/pictures“><img alt=“FrankieValli” title=“FrankieValli” width=“200” class=“pan” src=“https://ass3.fetlife.com/images/avatar_missing_200x200.gif” /></a>
+        <div class=“center smaller”>
+            <a href=“/pictures/new”>upload pic</a>
+
+         |
+
+           <a href=“/videos/new”>upload vid</a>
+          &nbsp;&nbsp;
+        </div>
+      </div>
+      <div class=“span-13 append-1”>
+        <h2 class=“bottom”>FrankieValli <span class=“small quiet”>47CD/TV sub</span></h2>
+        <p><em><a href=“/cities/11913">Neepawa</a>, <a href=“/administrative_areas/592”>Manitoba</a>, <a href=“/countries/39">Canada</a></em></p>
+
+       <table>
+        </table>
+
+       <table>
+          <tr>
+            <th width=“100”>orientation:</th>
+            <td>Heteroflexible</td>
+          </tr>
+        </table>
+      </div>
+      <div class=“span-4 last”>

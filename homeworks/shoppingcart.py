@@ -44,8 +44,6 @@ class Inventory(object):
         print "Item: %s at $%d each" % (self.item_name, self.item_price)
         
         
-#inventory object that stores item names, prices, and quantities
-        
 shoppingcart = ShoppingCart();
 
 iphone = Inventory("iPhone", 2.0, 0)

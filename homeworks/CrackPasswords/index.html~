@@ -1,0 +1,99 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Wendy Knox Everette</title>
+<style type="text/css">
+body {
+color: navy;
+margin: 0px;
+padding: 0px;
+}
+.container {
+ width: 1100px;
+ padding-top: 0px;
+ padding-left: 5px;
+ padding-right: 5px;
+ margin: 5px;
+}
+
+.right {
+    float: right;
+    width: 600px;
+    margin: 0px;
+}
+
+.left {
+    float: left;
+    width: 400px;
+    border: 1px solid gray;
+    font-size: 14px;
+    padding-left: 10px;
+
+}
+h1 {color:navy; align:center}
+h2 {color:rgb(255,0,0);}
+</style>
+<meta name="p:domain_verify" content="751d0a0b9ba919edd799015d96c09a02" />
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class=container>
+<div>
+<h1>Welcome</h1>
+</div>
+
+<div class="left">
+<p>
+Homepages have evolved a bit in the many years that I've had one. I like to think of this version as the distributed presence iteration.
+</p>
+<p>
+I love regexes, b&w photography, and chocolate chip cookies. former SDET @ amzn. Wellesley alum, Google alum, USCG wife, perl hacker, nerd. Current 3L.
+</p>
+
+<p>
+I occasionally update <a href="http://www.wendycatherine.com">my blog</a> and <a href="http://w38th.blogspot.com">my sewing blog, West 38th</a>
+</p>
+<p>
+I'm on Twitter: <a href="https://twitter.com/#!/wendyck">@wendyck</a>
+</p>
+
+<p>As well as <a href="http://www.linkedin.com/in/wendyknox">LinkedIn</a> and <a href="http://www.quora.com/Wendy-Knox-Everette">Quora</a> </p>
+
+<p>I keep pictures on <a href="http://www.flickr.com/photos/wck">Flickr as wck</a> and <a href="http://instagram.com/wendyck">Instagram</a></p>
+
+<p>I read a lot. My current reading eventually gets imported into <a href="http://goodreads.com/wendyck">goodreads</a></p>
+
+<p>I have a <a href="http://wck.tumblr.com/">Tumblr</a> and here is <a href="http://pinterest.com/doubleamericano/">my pinterest</a></p>
+
+<p>My <a href=https://github.com/wendyck>Github profile page</a> - writing mostly python and Node.js these days.</p>
+
+<p><font size="-2">--wendy knox everette</font></p>
+</div>
+
+<div class=right>
+<a href="http://www.flickr.com/photos/wck/363973553/" title="Untitled by wck, on Flickr"><img src="http://farm1.staticflickr.com/172/363973553_e66334f622.jpg" width="500" height="333" alt=""></a>
+<br>
+<a href="http://www.flickr.com/photos/wck/93368591/" title="Untitled by wck, on Flickr"><img src="http://farm1.staticflickr.com/32/93368591_d3dd2f1905.jpg" width="500" height="339" alt=""></a>
+
+
+</div>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2285151-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</body>
+</html>
